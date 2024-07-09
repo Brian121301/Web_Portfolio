@@ -1,37 +1,63 @@
+"use client";
+
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
+    const [navColour, updateNavbar] = useState(false);
+
+    useEffect(() => {
+        const scrollHandler = () => {
+            if (window.scrollY >= 20) {
+                updateNavbar(true);
+            } else {
+                updateNavbar(false);
+            }
+        };
+
+        window.addEventListener("scroll", scrollHandler);
+
+        // Cleanup event listener on component unmount
+        return () => {
+            window.removeEventListener("scroll", scrollHandler);
+        };
+    }, []);
+
     return (
-        <nav className='p-4'>
-            <ul className='flex items-center w-full'>
-                <li className='mr-auto'>
+        <nav className={`p-4 w-full ${navColour ? 'fixed top-0 bg-gray-800 bg-opacity-90' : 'absolute bg-black'}`}>
+            <ul className='flex items-center justify-between'>
+                <li className='pl-16'>
                     <Link href="/">
-                        Logo
+                        <p className={`text-xl  flex space-x-12  pr20 ${navColour ? 'text-white' : 'text-gray-300'}`}>Logo</p>
                     </Link>
                 </li>
-                <div className='ml-auto flex space-x-4'>
+                <div className={`text-xl  flex space-x-12 pr-20 ${navColour ? 'text-white' : 'text-gray-300'}`}>
                     <li>
                         <Link href="/">
-                            Home
+                            <p className=''>Home</p>
                         </Link>
                     </li>
                     <li>
                         <Link href="/about">
-                            About
+                            <p className=''>About</p>
                         </Link>
                     </li>
                     <li>
                         <Link href="/projects">
-                            Projects
+                            <p className=''>Projects</p>
                         </Link>
                     </li>
                     <li>
                         <Link href="/resume">
-                            Resume
+                            <p className=''>Resume</p>
+                        </Link>
+                    </li>
+                    <li className='fork-btn'>
+                        <Link href="https://github.com/Brian121301/Web_Portfolio">
+                            <p className=''>Github</p>
                         </Link>
                     </li>
                 </div>
-
             </ul>
         </nav>
     );
