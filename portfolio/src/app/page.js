@@ -1,22 +1,18 @@
 import Navbar from "@/components/Navbar";
+import Homepage from "./home/page";
 import { Container } from "postcss";
 
-export default function Home() {
+export default function main() {
   return (
     <main className="min-h-screen bg-cover">
-      <div 
-        className="w-full h-full" 
-        style={{
-          backgroundImage: "url('')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
+      <div>
         <div className='w-full'>
           <Navbar />
         </div>
-        
+        <div>
+          <Homepage />
+        </div>
+
       </div>
 
     </main>
