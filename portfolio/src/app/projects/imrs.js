@@ -14,50 +14,52 @@ const Imrs = () => {
             on a dynamic heat map, delivering invaluable information for first responders.
         </p>,
 
-        moreInfo: <p> Developed a critical safety mobile application in collaboration with A-Shield LLC
-            and a University of North Texas IT group. The app enhances law enforcement response during active
-            shooter situations using geofencing, real-time user status updates, and a dynamic map. The application
-            utilizes the Google Maps API within a React Native framework to provide real-time user status updates
-            on a dynamic heat map, delivering invaluable information for first responders.
+        moreInfo:
+            <div> Developed a critical safety mobile application in collaboration with A-Shield LLC
+                and a University of North Texas IT group. The app enhances law enforcement response during active
+                shooter situations using geofencing, real-time user status updates, and a dynamic map. The application
+                utilizes the Google Maps API within a React Native framework to provide real-time user status updates
+                on a dynamic heat map, delivering invaluable information for first responders.
 
-            <p className="font-bold pt-4 pb-2">Key Features:</p>
+                <p className="font-bold pt-4 pb-2">Key Features:</p>
 
-            <p className="p-4"> Geofencing and Alerts: When a shooter incident is reported, a geofence is placed around the area.
-                All users within the geofence are alerted by the app. Regular users are directed to a status page
-                with a description of the shooter and location details. They can set their status on the situation
-                using a color-coded system:
-            </p>
-
-            <p className="pb-2 flex flex-col items-center">
-                <p><strong className="text-green-500">Green</strong>: No sign of the shooter</p>
-                <p><strong className="text-yellow-300">Yellow</strong>: Gunshots heard nearby</p>
-                <p><strong className="text-red-600">Red</strong>: Shooter sighted</p>
-            </p>
-
-            <p className="font-bold pb-2">First Responder Tools:</p>
-            <p className="p-4"> First responders have access to a heat map that shows all users' statuses
-                and the description of the shooter. They can drop pins on the map to coordinate their response. Different
-                icons represent police, firefighters, and ambulance personnel, enhancing coordination and communication.
-            </p>
-
-            <p className="font-bold pt-4 pb-2">Technology Stack:</p>
-
-            <p className="p-4"><strong>React Native</strong>: Used for developing the mobile application, ensuring a smooth and responsive user experience.
-
-                <p className="pt-2 pb-2"><strong>AWS Backend</strong>: AWS DynamoDB was employed for database management, and AWS Lambda was used to trigger real-time
-                    updates. Whenever there was an update to the database, the Lambda function would activate and send updates to
-                    all users, especially first responders, ensuring their heat maps were constantly updated to track the shooter.</p>
-
-                <p className="pt-2 pb-4"><strong>Google Maps API</strong>: Integrated to create the dynamic map and heat map features, providing a visual and interactive
-                    interface for both regular users and first responders.</p>          
+                <p className="p-4"> Geofencing and Alerts: When a shooter incident is reported, a geofence is placed around the area.
+                    All users within the geofence are alerted by the app. Regular users are directed to a status page
+                    with a description of the shooter and location details. They can set their status on the situation
+                    using a color-coded system:
                 </p>
 
-                <p className="pt-2">This project honed my skills in mobile app development, real-time data processing, and geolocation services, while also 
-                enhancing my ability to collaborate effectively in a team setting. It reflects my commitment to leveraging technology for 
-                public safety and my proficiency in creating impactful, real-world solutions.</p>
+                <p className="pb-2 flex flex-col items-center">
+                    <p><strong className="text-green-500">Green</strong>: No sign of the shooter</p>
+                    <p><strong className="text-yellow-300">Yellow</strong>: Gunshots heard nearby</p>
+                    <p><strong className="text-red-600">Red</strong>: Shooter sighted</p>
+                </p>
+
+                <p className="font-bold pb-2">First Responder Tools:</p>
+                <p className="p-4"> First responders have access to a heat map that shows all users' statuses
+                    and the description of the shooter. They can drop pins on the map to coordinate their response. Different
+                    icons represent police, firefighters, and ambulance personnel, enhancing coordination and communication.
+                </p>
+
+                <p className="font-bold pt-4 pb-2">Technology Stack:</p>
+
+                <div className="p-4"><strong>React Native</strong>: Used for developing the mobile application, ensuring a smooth and responsive user experience.
+
+                    <p className="pt-2 pb-2"><strong>AWS Backend</strong>: AWS DynamoDB was employed for database management, and AWS Lambda was used to trigger real-time
+                        updates. Whenever there was an update to the database, the Lambda function would activate and send updates to
+                        all users, especially first responders, ensuring their heat maps were constantly updated to track the shooter.
+                    </p>
+
+                    <p className="pt-2 pb-4"><strong>Google Maps API</strong>: Integrated to create the dynamic map and heat map features, providing a visual and interactive
+                        interface for both regular users and first responders.</p>
+                </div>
+
+                <p className="pt-2">This project honed my skills in mobile app development, real-time data processing, and geolocation services, while also
+                    enhancing my ability to collaborate effectively in a team setting. It reflects my commitment to leveraging technology for
+                    public safety and my proficiency in creating impactful, real-world solutions.</p>
 
 
-        </p>
+            </div>
     }
 
     return (
