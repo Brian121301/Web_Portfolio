@@ -31,3 +31,16 @@ body {
     text-wrap: balance;
   }
 }
+
+.expandable {
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+
+.max-h-0 {
+  max-height: 0;
+}
+
+.max-h-full {
+  max-height: 1000px; /* Adjust this value as needed */
+}
