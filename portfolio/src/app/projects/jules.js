@@ -6,6 +6,20 @@ const Jules = () => {
 
     const [isExpanded, setIsExpanded] = useState(false);
 
+    const info = {
+        summary: <p>
+            Led a team of 3 in developing a dynamic e-commerce platform specializing in unique, hand-crafted goods,
+            focusing on customer experience and security. Utilized HTML, CSS, PHP, and JavaScript to create seamless
+            navigation and customization. Implemented robust security measures, including multifactor authentication,
+            a secure PayPal payment gateway, and HTTPS encryption. Conducted vulnerability assessments using Nessus and
+            simulated DDoS attacks to ensure system resilience.
+        </p>,
+
+        moreInfo: <p>
+            he
+        </p>
+    }
+
     return (
         <div>
             <div className="flex flex-col items-center shadow-md outline outline-1 p-8">
@@ -23,13 +37,9 @@ const Jules = () => {
                             Feb 2024 - Apr 2024
                         </p>
                     </div>
-                    <p>
-                        Developed a critical safety mobile app in collaboration with A-Shield LLC
-                        and a University of North Texas IT group. The app enhances law enforcement
-                        response during active shooter situations using geofencing, real-time user
-                        status updates, and a dynamic map. Built with React Native and AWS backend,
-                        the app provides first responders with a heat map for coordinated response efforts.
-                    </p>
+                    <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isExpanded ? 'max-h-[1000px]' : 'max-h-40'}`}>
+                        {isExpanded ? info.moreInfo : info.summary}
+                    </div>
                 </div>
 
                 <div className="flex flex-row">
@@ -47,7 +57,7 @@ const Jules = () => {
                     >Github</a>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
