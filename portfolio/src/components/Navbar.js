@@ -32,22 +32,22 @@ const Navbar = () => {
                 </li>
                 <div className={`text-xl  flex space-x-12 pr-20 ${navColour ? 'text-white' : 'text-gray-300'}`}>
                     <li>
-                        <Link href="/">
+                        <Link href="#home">
                             <p className=''>Home</p>
                         </Link>
                     </li>
                     <li>
-                        <Link href="/about">
+                        <Link href="#about">
                             <p className=''>About</p>
                         </Link>
                     </li>
                     <li>
-                        <Link href="/projects">
+                        <Link href="#projects">
                             <p className=''>Projects</p>
                         </Link>
                     </li>
                     <li>
-                        <Link href="/resume">
+                        <Link href="#resume">
                             <p className=''>Resume</p>
                         </Link>
                     </li>

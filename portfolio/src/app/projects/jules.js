@@ -7,22 +7,19 @@ const Jules = () => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     const info = {
-        summary: <p>
-            Led a team of 3 in developing a dynamic e-commerce platform specializing in unique, hand-crafted goods,
-            focusing on customer experience and security. Utilized HTML, CSS, PHP, and JavaScript to create seamless
-            navigation and customization. Implemented robust security measures, including multifactor authentication,
-            a secure PayPal payment gateway, and HTTPS encryption. Conducted vulnerability assessments using Nessus and
-            simulated DDoS attacks to ensure system resilience.
-        </p>,
-
-        moreInfo: <p>
-            he
-        </p>
+        summary:
+            <p className="pb-4">
+                Led a team of 3 in developing a dynamic e-commerce platform specializing in unique, hand-crafted goods,
+                focusing on customer experience and security. Utilized HTML, CSS, PHP, and JavaScript to create seamless
+                navigation and customization. Implemented robust security measures, including multifactor authentication,
+                a secure PayPal payment gateway, and HTTPS encryption. Conducted vulnerability assessments using Nessus and
+                simulated DDoS attacks to ensure system resilience.
+            </p>
     }
 
     return (
         <div>
-            <div className="flex flex-col items-center shadow-md outline outline-1 p-8">
+            <div className="flex flex-col items-center shadow-md outline outline-1 rounded-lg p-8">
 
                 <img
                     src="Jules.jpeg"
@@ -43,12 +40,6 @@ const Jules = () => {
                 </div>
 
                 <div className="flex flex-row">
-                    <button
-                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
-                        onClick={() => setIsExpanded(!isExpanded)}
-                    >
-                        {isExpanded ? 'Show Less' : 'Show More'}
-                    </button>
                     <a
                         href={"https://github.com/Brian121301/Jules-Crafting-Corner"}
                         target="_blank"
@@ -57,7 +48,7 @@ const Jules = () => {
                     >Github</a>
                 </div>
             </div>
-        </div >
+        </div>
     )
 }
 

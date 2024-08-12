@@ -2,7 +2,7 @@ import Skills from "./techs";
 
 const About = () => {
     return (
-        <div className="min-h-screen bg-blue-100">
+        <div className="min-h-screen">
             <div className="flex items-center justify-center">
                 <div className="flex justify-center ml-20 p-20">
                     <img

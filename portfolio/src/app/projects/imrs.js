@@ -32,13 +32,13 @@ const Imrs = () => {
           location details. They can set their status on the situation using a color-coded system:
         </p>
 
-        <div className="pb-2 flex flex-col items-center">
+        <div className="py-2 flex flex-col items-center">
           <p><strong className="text-green-500">Green</strong>: No sign of the shooter</p>
           <p><strong className="text-yellow-300">Yellow</strong>: Gunshots heard nearby</p>
           <p><strong className="text-red-600">Red</strong>: Shooter sighted</p>
         </div>
 
-        <p className="font-bold pb-2">First Responder Tools:</p>
+        <p className="font-bold py-2">First Responder Tools:</p>
         <p className="p-4">
           First responders have access to a heat map that shows all users' statuses and the description of the shooter. They can 
           drop pins on the map to coordinate their response. Different icons represent police, firefighters, and ambulance personnel, 
@@ -49,18 +49,18 @@ const Imrs = () => {
 
         <div className="p-4">
           <strong>React Native</strong>: Used for developing the mobile application, ensuring a smooth and responsive user experience.
-          <p className="pt-2 pb-2">
+          <p className="py-2">
             <strong>AWS Backend</strong>: AWS DynamoDB was employed for database management, and AWS Lambda was used to trigger 
             real-time updates. Whenever there was an update to the database, the Lambda function would activate and send updates to all 
             users, especially first responders, ensuring their heat maps were constantly updated to track the shooter.
           </p>
-          <p className="pt-2 pb-4">
+          <p className="py-2">
             <strong>Google Maps API</strong>: Integrated to create the dynamic map and heat map features, providing a visual and interactive 
             interface for both regular users and first responders.
           </p>
         </div>
 
-        <p className="pt-2">
+        <p className="py-2 pb-4">
           This project honed my skills in mobile app development, real-time data processing, and geolocation services, while also enhancing 
           my ability to collaborate effectively in a team setting. It reflects my commitment to leveraging technology for public safety and 
           my proficiency in creating impactful, real-world solutions.
@@ -71,11 +71,11 @@ const Imrs = () => {
 
   return (
     <div>
-      <div className="flex flex-col items-center shadow-md outline outline-1 p-8">
+      <div className="flex flex-col items-center shadow-md outline outline-1 w-full h-full rounded-lg p-8">
         <img
           src="IMRS.jpeg"
           alt="Status Page"
-          className="h-76 w-72 object-contain"
+          className="h-76 w-72 object-contain rounded-lg"
         />
 
         <div>
