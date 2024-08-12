@@ -1,7 +1,7 @@
 import About from "./about/page";
 import Homepage from "./home/page";
-import { Container } from "postcss";
 import Projects from "./projects/page";
+import ResumePage from "./resume/page";
 
 export default function main() {
   return (
@@ -17,6 +17,9 @@ export default function main() {
         </div>
         <div id="projects">
           <Projects />
+        </div>
+        <div id="resume">
+          <ResumePage />
         </div>
       </div>
 

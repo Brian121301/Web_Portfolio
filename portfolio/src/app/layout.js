@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <body 
       className={`${inter.className} min-h-screen bg-cover bg-center`}
         style={{
-          backgroundImage: `url('/minimal.jpg')`, // Use the relative path from the public directory
+          backgroundImage: `url('/minimal.jpg')`,
         }}>
       <Navbar />
       {children}
