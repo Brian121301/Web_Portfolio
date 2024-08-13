@@ -1,29 +1,42 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
+import 'react-pdf/dist/esm/Entry.css'; // Import default styles
 
+pdfjs.GlobalWorkerOptions.workerSrc = "pdf.worker.mjs";
 
-// Set up the pdf worker
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+const Resume = () => {
+    const [numPages, setNumPages] = useState(null);
+    const [error, setError] = useState(null);
 
-const ResumePage = () => {
-  const [width, setWidth] = useState(1200);
+    const onDocumentLoadSuccess = ({ numPages }) => {
+        setNumPages(numPages);
+        setError(null); // Clear any previous errors
+    };
 
-  useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    handleResize(); // Set initial width
+    const onDocumentLoadError = (error) => {
+        console.error("Failed to load PDF:", error);
+        setError("Failed to load PDF. Please try again later.");
+    };
 
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return (
-    <div>
-      <Document file="resume.pdf" className="d-flex justify-content-center">
-        <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
-      </Document>
-    </div>
-  );
+    return (
+        <div className="flex items-center justify-center h-screen">
+            {error ? (
+                <div className="text-red-500">{error}</div>
+            ) : (
+                <div className="relative w-[50%] h-[50%]">
+                    <Document
+                        file="./resume.pdf"
+                        onLoadSuccess={onDocumentLoadSuccess}
+                        onLoadError={onDocumentLoadError}
+                        className="absolute inset-0"
+                    >
+                        <Page pageNumber={1} />
+                    </Document>
+                </div>
+            )}
+        </div>
+    );
 };
 
-export default ResumePage;
+export default Resume;
